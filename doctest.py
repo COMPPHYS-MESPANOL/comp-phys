@@ -1,16 +1,16 @@
 """
-
 >>> F(1)
 33.8
-
 """
 
 def F(C):
-    return(9./5)*C + 32.
+    degrees=(9./5)*C + 32.
+    print degrees
 
-print F(1)
-
+F(1)
     
 if __name__ == "__main__":
+    
     import doctest
-    doctest.testmod()
+    doctest.testmod() 
+    
