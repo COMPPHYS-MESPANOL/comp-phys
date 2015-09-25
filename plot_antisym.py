@@ -1,4 +1,7 @@
-#%matplotlib osx
+'''This program plots both the wave function and the probability density. The function psi gives the total wave 
+function. The function prob_density takes p which here is psi and finds the probability denisty of it (this is done in
+antisym). The total wave function and the probability density are then plottted on seperate graphs.'''
+#%matplotlib OS X
 #HW03
 #Matthew Espanol
 #Partner: Matthew Del Rosario
