@@ -19,6 +19,7 @@ class Dolphins:
         return self.age
     
     def procreate(self, dolphs):  #dolphs will be a dictionary 
+        procreation=True
         dad = False
         mom = False
         random_sex = random.sample(['male', 'female'], 1)[0]
@@ -38,25 +39,29 @@ class Dolphins:
             or numpy.absolute(new_male.age - new_female.age) > 10:
                  procreation = False
             else:
-                List_name.Dolphins(List_name, dolphs, dolphs, random_sex)   #if none of these set procreation to false, procreation instantiates new dolphin
-
+                List_name.Dolphins(random.choice(List_name), dolphs, dolphs, random_sex, age=0)   #if none of these set procreation to false, procreation instantiates new dolphin
+    
 
 #Matthew Espanol
 #Matthew Del Rosario
+#project part 2
 #October 13 2015
 import urllib
 import re
 from pprint import pprint as p
+import random
 
 counter = 1
-guys_names = []
-lady_names = []
-while counter < 5:
+guys_names = []       #list for all of the men's names
+lady_names = []       #list for all of the women's names
+while counter < 5:   #counter increases for each page
     first_url = 'http://www.prokerala.com/kids/baby-names/boy/page-'+str(counter)+'.html'
     second_url = 'http://www.prokerala.com/kids/baby-names/girl/page-'+str(counter)+'.html'
+    
     file1 = urllib.urlopen(first_url)      
     lines1 = file1.readlines()
-    file1.close()    
+    file1.close()  
+    
     file2 = urllib.urlopen(second_url)      
     lines2 = file2.readlines()
     file2.close()
@@ -72,4 +77,11 @@ while counter < 5:
             lady_names.append(m2.group(2))
     counter += 1
 p(guys_names)
-p(lady_names)    
+p(lady_names)  
+for x in len(guys_names):
+    List_name.Dolphins(random.choice(guys_names),dolphs, dolphs,random_sex)
+
+for x in len(lady_names):
+    List_name.Dolphins(random.choice(lady_names),dolphs, dolphs,random_sex)
+
+
